@@ -20,7 +20,7 @@ int	PlayGame(Lock *lock, int life)
 	// execution of the game:
 	for (int i = 0; i < 5; i++)
 		std::cin >> guess[i];
-	if (!Lock::CheckCombination(guess))
+	if (!Lock::checkCombination(guess))
 	{
 		std::cout << MSG_LOSELIFE.c_str() << std::endl;
 		life--;

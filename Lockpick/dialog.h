@@ -3,6 +3,7 @@
 
 #include <iostream>
 #include <string>
+#include "Lock.hpp"
 
 // IN GAME MESSAGES:
 # define	MSG_LOCK			"# You have to open a lock of Lev. "
@@ -16,7 +17,7 @@
 # define	ERR_NEEDMOREARGS	"**ERROR: You entered less than 5 digits. Please try again.**"
 # define	ERR_TOOMANYARGS		"**ERROR: You entered more than 5 digits. Please try again.**"
 
-static void	IntroDialog()
+void	IntroDialog()
 {
 	std::cout << "------------------------------------------" << std::endl;
 	std::cout << "|             OPEN THE VAULT             |" << std::endl;
@@ -29,7 +30,7 @@ static void	IntroDialog()
 	std::cout << "------------------------------------------" << std::endl;
 }
 
-static void	HintDialog(int sum, int prod)
+void	HintDialog(int sum, int prod)
 {
 	std::cout << "------------------------------------------" << std::endl;
 	std::cout << "+ The SUM of the 5 digits is " << sum << std::endl;
