@@ -1,20 +1,4 @@
-#ifndef DIALOG_H
-# define DIALOG_H
-
-#include <iostream>
-#include <string>
-
-// IN GAME MESSAGES:
-# define	MSG_LOCK			"# You have to open a lock of Lev. "
-# define	MSG_UNLOCK			"+ You unlocked a lock of Lev. "
-# define	MSG_LIFELEFT		"+ Lockpicks remaining: "
-# define	MSG_LOSELIFE		"+ You entered the WRONG combination and lost one lockpick."
-# define	MSG_WIN				"+ Congratulations! You Opened all the locks and entered The Vault!"
-# define	MSG_FAIL			"+ You have failed too many times! Game Over!"
-
-// ERROR MESSAGES:
-# define	ERR_NEEDMOREARGS	"**ERROR: You entered less than 5 digits. Please try again.**"
-# define	ERR_TOOMANYARGS		"**ERROR: You entered more than 5 digits. Please try again.**"
+#include "Lock.hpp"
 
 void	IntroDialog()
 {
@@ -37,6 +21,36 @@ void	HintDialog(int sum, int prod)
 	std::cout << "------------------------------------------" << std::endl;
 
 	std::cout << "Please type in your guess for the combination:" << std::endl;
+}
+
+void	MessageDialog(std::string type)
+{
+	std::cout << "------------------------------------------" << std::endl;
+	switch (type)
+	{
+		case "LOCK":
+			std::cout << "# You have to open a lock of Lev. ";
+			break;
+		case "UNLOCK":
+			std::cout << "+ You unlocked a lock of Lev. ";
+			break;
+		case "LIFELEFT":
+			std::cout << "+ Lockpicks remaining: ";
+			break;
+		case "LOSELIFE":
+			std::cout << "+ You entered the WRONG combination and lost one lockpick." << std::endl;
+			break;
+		case "WIN":
+			std::cout << "+ Congratulations! You Opened all the locks and entered The Vault!" << std::endl;
+			break;
+		case "LOSE":
+			std::cout << "+ You have failed too many times! Game Over!" << std::endl;
+			break;
+
+		default:
+			break;
+	}
+	std::cout << "------------------------------------------" << std::endl;
 }
 
 #endif

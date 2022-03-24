@@ -6,20 +6,20 @@ CC			=	clang++
 
 CFLAGS		=	-Wall -Wextra -Werror -std=c++98
 
-RM		=	rm -f
+RM			=	rm -f
 
 #	FILES
 
-SRCS			=	Lock.cpp \
-					main.cpp
+SRCS		=	Lock.cpp \
+				main.cpp
 
-OBJS = $(SRCS:.cpp=.o)
+OBJS 		=	$(SRCS:.cpp=.o)
 
 #	RULES
 
 all			:	run score
 
-$(NAME)		:	$(OBJS)
+$(NAME)		:	@$(OBJS)
 				@$(CC) $(CFLAGS) $^ -o $@
 
 re			:	fclean all
@@ -36,6 +36,6 @@ score		:
 				@echo "-----------------[ OPEN THE VAULT ]----------------"
 				@echo "|               powered by lmarzano               |"
 				@echo "-----------------------[READY]---------------------"
-				@./Lockpick
+#				@./Lockpick
 
 .phony		:	run clean fclean re score

@@ -4,10 +4,10 @@ static bool	hasLife(int life)
 {
 	if (!life)
 	{
-		std::cout << "+ You have failed too many times! Game Over!" << std::endl;
+		
 		return (false);
 	}
-	std::cout << "+ Lockpicks remaining: ";
+	MessageDialog("LIFELEFT");
 	std::cout << life << std::endl;
 	return (true);
 }
@@ -22,7 +22,7 @@ int	PlayGame(Lock *lock, int life)
 		std::cin >> guess[i];
 	if (!lock->checkCombination(guess))
 	{
-		std::cout << "+ You entered the WRONG combination and lost one lockpick." << std::endl;
+		MessageDialog("LOSELIFE");
 		life--;
 	}
 	return (life);
@@ -39,17 +39,18 @@ int main()
 		res = 0;
 		if (!hasLife(life))
 			return (0);
+
 		Lock	lock(lev);
 
-		std::cout << "# You have to open a lock of Lev. ";
-		std::cout << lev << std::endl;
+		MessageDialog("LOCK");
+		std:: << lev << std::endl;
 
 		res = PlayGame(&lock, life);
 
 		if (res == life)
 		{
 			lock.setLock(false);
-			std::cout << "+ You unlocked a lock of Lev. ";
+			MessageDialog("UNLOCK");
 			std::cout << lev << std::endl;
 		}
 		else
@@ -57,6 +58,6 @@ int main()
 
 		life = res;
 	}
-	std::cout << "+ Congratulations! You Opened all the locks and entered The Vault!" << std::endl;
+	MessageDialog("WIN");
 	return (0);
 }
