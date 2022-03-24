@@ -42,7 +42,7 @@ int main()
 
 		Lock	lock(lev);
 
-		lock.printCombination(); //DEBUG
+		//lock.printCombination(); //DEBUG CHEAT MODE
 
 		messageDialog("LOCK");
 		std::cout << lev << std::endl;
