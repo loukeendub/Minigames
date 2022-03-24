@@ -32,7 +32,7 @@ int	Lock::Product()
 	return (prod);
 }
 
-bool		checkCombination(int *guess)
+bool	Lock::checkCombination(int *guess)
 {
 	int guessSum = 0;
 	int	guessProd = 1;
