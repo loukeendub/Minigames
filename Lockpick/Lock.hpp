@@ -3,7 +3,7 @@
 
 #include "dialog.h"
 
-typedef class Lock
+class Lock
 {
 	private:
 		const int	combination[5];

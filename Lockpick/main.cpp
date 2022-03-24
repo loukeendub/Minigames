@@ -41,7 +41,7 @@ int main()
 		Lock	lock(lev);
 
 		std::cout << MSG_LOCK(lev) << std::endl;
-		res = PlayGame(&lock, life)
+		res = PlayGame(&lock, life);
 		if (res == life)
 			std::cout << MSG_UNLOCK(lev) << std::endl;
 		else
