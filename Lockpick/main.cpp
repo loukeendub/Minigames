@@ -16,13 +16,11 @@ int	PlayGame(Lock *lock, int life)
 {
 	int	guess[5];
 
-	int	sum = 
-
-	HintDialog(Lock::Sum, Lock::Product);
+	HintDialog(lock->Sum(), lock->Product());
 	// execution of the game:
 	for (int i = 0; i < 5; i++)
 		std::cin >> guess[i];
-	if (!Lock::checkCombination(guess))
+	if (!lock->checkCombination(guess))
 	{
 		std::cout << "+ You entered the WRONG combination and lost one lockpick." << std::endl;
 		life--;

@@ -12,7 +12,6 @@ class Lock
 		Lock(int lev);
 		~Lock();
 
-		int			*getCombination() const;
 		int			Sum();
 		int			Product();
 		bool		checkCombination(int *guess);

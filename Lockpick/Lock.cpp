@@ -10,9 +10,6 @@ Lock::Lock(int lev) : locked(true)
 Lock::~Lock()
 {}
 
-int	*Lock::getCombination() const
-{ return (combination); }
-
 int	Lock::Sum()
 {
 	int sum = 0;

@@ -3,7 +3,6 @@
 
 #include <iostream>
 #include <string>
-#include "Lock.hpp"
 
 // IN GAME MESSAGES:
 # define	MSG_LOCK			"# You have to open a lock of Lev. "
