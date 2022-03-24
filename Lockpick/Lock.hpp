@@ -9,7 +9,7 @@ typedef class Lock
 		const int	combination[5];
 		bool		locked;
 	public:
-		Lock(int difficulty);
+		Lock(int dif);
 		~Lock();
 
 		const int	*getCombination();
