@@ -17,10 +17,12 @@ class Lock
 		int			Product();
 		bool		checkCombination(int *guess);
 		void		setLock(bool locked);
+
+		void		printCombination() const;
 };
 
-void	IntroDialog();
-void	HintDialog(int sum, int prod);
-void	MessageDialog(std::string type);
+void	introDialog();
+void	hintDialog(int sum, int prod);
+void	messageDialog(std::string type);
 
 #endif

@@ -11,6 +11,7 @@ RM			=	rm -f
 #	FILES
 
 SRCS		=	Lock.cpp \
+				dialog.cpp \
 				main.cpp
 
 OBJS 		=	$(SRCS:.cpp=.o)
@@ -19,7 +20,7 @@ OBJS 		=	$(SRCS:.cpp=.o)
 
 all			:	run score
 
-$(NAME)		:	@$(OBJS)
+$(NAME)		:	$(OBJS)
 				@$(CC) $(CFLAGS) $^ -o $@
 
 re			:	fclean all
@@ -33,9 +34,12 @@ fclean		:	clean
 run			:	$(NAME)
 
 score		:
-				@echo "-----------------[ OPEN THE VAULT ]----------------"
-				@echo "|               powered by lmarzano               |"
-				@echo "-----------------------[READY]---------------------"
-#				@./Lockpick
+				@echo "-------------[ OPEN THE VAULT ]-----------"
+				@echo "|           powered by lmarzano          |"
+				@echo "|                                        |"
+				@echo "|        enter "./Lockpick" to play      |"
+				@echo "-------------------[READY]----------------"
+				./Lockpick
+				
 
 .phony		:	run clean fclean re score

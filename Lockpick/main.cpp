@@ -7,22 +7,22 @@ static bool	hasLife(int life)
 		
 		return (false);
 	}
-	MessageDialog("LIFELEFT");
+	messageDialog("LIFELEFT");
 	std::cout << life << std::endl;
 	return (true);
 }
 
-int	PlayGame(Lock *lock, int life)
+int	playGame(Lock *lock, int life)
 {
 	int	guess[5];
 
-	HintDialog(lock->Sum(), lock->Product());
+	hintDialog(lock->Sum(), lock->Product());
 	// execution of the game:
 	for (int i = 0; i < 5; i++)
 		std::cin >> guess[i];
 	if (!lock->checkCombination(guess))
 	{
-		MessageDialog("LOSELIFE");
+		messageDialog("LOSELIFE");
 		life--;
 	}
 	return (life);
@@ -33,7 +33,7 @@ int main()
 	int	life = 3;
 	int	res;
 
-	IntroDialog();
+	introDialog();
 	for (int lev = 1; lev < 10; lev++)
 	{
 		res = 0;
@@ -42,15 +42,17 @@ int main()
 
 		Lock	lock(lev);
 
-		MessageDialog("LOCK");
-		std:: << lev << std::endl;
+		//lock.printCombination(); //DEBUG
 
-		res = PlayGame(&lock, life);
+		messageDialog("LOCK");
+		std::cout << lev << std::endl;
+
+		res = playGame(&lock, life);
 
 		if (res == life)
 		{
 			lock.setLock(false);
-			MessageDialog("UNLOCK");
+			messageDialog("UNLOCK");
 			std::cout << lev << std::endl;
 		}
 		else
@@ -58,6 +60,6 @@ int main()
 
 		life = res;
 	}
-	MessageDialog("WIN");
+	messageDialog("WIN");
 	return (0);
 }

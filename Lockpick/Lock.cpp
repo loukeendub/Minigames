@@ -47,3 +47,10 @@ bool	Lock::checkCombination(int *guess)
 
 void	Lock::setLock(bool locked)
 { this->locked = locked; }
+
+void	Lock::printCombination() const
+{
+	for (int i = 0; i < 5; i++)
+		std::cout << this->combination[i] << " ";
+	std::cout << std::endl;
+}
