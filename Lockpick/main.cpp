@@ -48,6 +48,7 @@ int main()
 
 		if (res == life)
 		{
+			lock.setLock(false);
 			std::cout << MSG_UNLOCK.c_str();
 			std::cout << lev << std::endl;
 		}
@@ -56,6 +57,6 @@ int main()
 
 		life = res;
 	}
-	std::cout << MSG_WIN << std::endl;
+	std::cout << MSG_WIN.c_str() << std::endl;
 	return (0);
 }

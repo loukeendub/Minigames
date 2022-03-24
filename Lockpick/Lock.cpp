@@ -47,3 +47,6 @@ bool	Lock::checkCombination(int *guess)
 		return (true);
 	return (false);
 }
+
+void	Lock::setLock(bool locked)
+{ this->locked = locked; }

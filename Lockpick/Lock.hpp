@@ -16,6 +16,7 @@ class Lock
 		int			Sum();
 		int			Product();
 		bool		checkCombination(int *guess);
+		void		setLock(bool locked);
 };
 
 #endif
