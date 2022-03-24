@@ -6,13 +6,13 @@
 class Lock
 {
 	private:
-		const int	combination[5];
-		bool		locked;
+		int		combination[5];
+		bool	locked;
 	public:
 		Lock(int lev);
 		~Lock();
 
-		const int	*getCombination();
+		int			*getCombination() const;
 		int			Sum();
 		int			Product();
 		bool		checkCombination(int *guess);
