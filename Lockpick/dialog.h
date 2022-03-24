@@ -2,11 +2,12 @@
 # define DIALOG_H
 
 #include <iostream>
+#include <string>
 
 // IN GAME MESSAGES:
-# define	MSG_LOCK(lev)		"# You have to open a Lev. " lev "lock:"
-# define	MSG_UNLOCK(lev)		"+ You unlocked a Lev. " lev " lock."
-# define	MSG_LIFELEFT(life)	"+ You have currently " life " lockpicks."
+# define	MSG_LOCK			"# You have to open a lock of Lev. "
+# define	MSG_UNLOCK			"+ You unlocked a lock of Lev. "
+# define	MSG_LIFELEFT		"+ Lockpicks remaining: "
 # define	MSG_LOSELIFE		"+ You entered the WRONG combination and lost one lockpick."
 # define	MSG_WIN				"+ Congratulations! You Opened all the locks and entered The Vault!"
 # define	MSG_FAIL			"+ You have failed too many times! Game Over!"
