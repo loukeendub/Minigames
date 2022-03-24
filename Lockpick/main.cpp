@@ -11,7 +11,7 @@ static bool	hasLife(int life)
 	return (true);
 }
 
-int	PlayGame(Lock *lock, int life);
+int	PlayGame(Lock *lock, int life)
 {
 	int	guess[5];
 
