@@ -16,6 +16,8 @@ int	PlayGame(Lock *lock, int life)
 {
 	int	guess[5];
 
+	int	sum = 
+
 	HintDialog(Lock::Sum, Lock::Product);
 	// execution of the game:
 	for (int i = 0; i < 5; i++)
