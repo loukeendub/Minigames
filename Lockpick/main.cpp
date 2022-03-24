@@ -4,7 +4,7 @@ static bool	hasLife(int life)
 {
 	if (!life)
 	{
-		
+		messageDialog("LOSE");
 		return (false);
 	}
 	messageDialog("LIFELEFT");
@@ -14,11 +14,11 @@ static bool	hasLife(int life)
 
 int	playGame(Lock *lock, int life)
 {
-	int	guess[5];
+	int	guess[3];
 
 	hintDialog(lock->Sum(), lock->Product());
 	// execution of the game:
-	for (int i = 0; i < 5; i++)
+	for (int i = 0; i < 3; i++)
 		std::cin >> guess[i];
 	if (!lock->checkCombination(guess))
 	{
@@ -42,7 +42,7 @@ int main()
 
 		Lock	lock(lev);
 
-		//lock.printCombination(); //DEBUG
+		lock.printCombination(); //DEBUG
 
 		messageDialog("LOCK");
 		std::cout << lev << std::endl;

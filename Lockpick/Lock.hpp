@@ -7,7 +7,7 @@
 class Lock
 {
 	private:
-		int		combination[5];
+		int		combination[3];
 		bool	locked;
 	public:
 		Lock(int lev);

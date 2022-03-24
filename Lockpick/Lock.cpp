@@ -3,7 +3,7 @@
 Lock::Lock(int lev) : locked(true)
 {
 	// initialize combination based on player level
-	for (int i = 0; i < 5; i++)
+	for (int i = 0; i < 3; i++)
 		combination[i] = rand() % lev + lev;
 }
 
@@ -15,7 +15,7 @@ int	Lock::Sum()
 	int sum = 0;
 
 	// sum up digits from combination array and return the total result as an int value
-	for (int i = 0; i < 5; i++)
+	for (int i = 0; i < 3; i++)
 		sum += combination[i];
 	return (sum);
 }
@@ -24,7 +24,7 @@ int	Lock::Product()
 {
 	int	prod = 1;
 	// multiply digits from combination array and return the total result as an int value
-	for (int i = 0; i < 5; i++)
+	for (int i = 0; i < 3; i++)
 		prod *= combination[i];
 	return (prod);
 }
@@ -35,7 +35,7 @@ bool	Lock::checkCombination(int *guess)
 	int	guessProd = 1;
 
 	// check if guess is correct
-	for (int i = 0; i < 5; i++)
+	for (int i = 0; i < 3; i++)
 	{
 		guessSum	+= guess[i];
 		guessProd	*= guess[i];
@@ -50,7 +50,10 @@ void	Lock::setLock(bool locked)
 
 void	Lock::printCombination() const
 {
-	for (int i = 0; i < 5; i++)
-		std::cout << this->combination[i] << " ";
-	std::cout << std::endl;
+	std::cout << "------------------------------------------" << std::endl;
+	std::cout << "[[ CHEAT ACTIVE ]] :showcombination: [[";
+	for (int i = 0; i < 3; i++)
+		std::cout << " " << this->combination[i];
+	std::cout << " ]]" << std::endl;
+	std::cout << "------------------------------------------" << std::endl;
 }
