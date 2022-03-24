@@ -4,7 +4,8 @@
 #include <iostream>
 
 // IN GAME MESSAGES:
-# define	MSG_UNLOCK(dif)		"+ You unlocked a Lev. " dif " lock."
+# define	MSG_LOCK(lev)		"# You have to open a Lev. " lev "lock:"
+# define	MSG_UNLOCK(lev)		"+ You unlocked a Lev. " lev " lock."
 # define	MSG_LOSELIFE		"+ You entered the WRONG combination and lost one lockpick"
 # define	MSG_LIFELEFT(life)	"+ You have currently " life " attempts."
 # define	MSG_WIN				"+ Congratulations! You Opened all the locks and entered The Vault!"
@@ -30,8 +31,11 @@ static void	IntroDialog()
 static void	HintDialog(int sum, int prod)
 {
 	std::cout << "------------------------------------------" << std::endl;
-	std::cout << "" << std::endl;
+	std::cout << "+ The SUM of the 5 digits is " << sum << std::endl;
+	std::cout << "+ The PRODUCT of the 5 digits is " << prod << std::endl;
 	std::cout << "------------------------------------------" << std::endl;
+
+	std::cout << "Please type in your guess for the combination:" << std::endl;
 }
 
 #endif
