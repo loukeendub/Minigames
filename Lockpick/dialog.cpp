@@ -24,7 +24,7 @@ void	hintDialog(int sum, int prod)
 	std::cout << "+	The PRODUCT of the 3 digits is " << prod << std::endl;
 	std::cout << "------------------------------------------" << std::endl;
 
-	std::cout << "Please type in your guess for the combination:" << std::endl;
+	std::cout << "Please type in your guess:" << std::endl;
 }
 
 static int	dialogList(std::string type)
