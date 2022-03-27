@@ -13,13 +13,14 @@ static void	playGame(int startLev)
 		statusDialog(currentLev, i);
 		master.addSeq(currentLev);
 		master.printSeq(&master, currentLev);
+		// ask 
 	}
 
 }
 
 int main()
 {
-	int	level = 0;
+	int	level;
 
 	introDialog();
 	level = selectLevel();

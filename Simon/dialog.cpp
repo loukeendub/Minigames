@@ -12,7 +12,13 @@ void	introDialog()
 
 //  + ask preferred start level (if blank start at lev 1) ;
 int	selectLevel()
-{}
+{
+	int	lev = 1;
+
+	std::cout << "Please enter your STARTING LEVEL:" << std::endl;
+	std::cin >> lev;
+	return (lev);
+}
 
 //	+ display number
 void	displayNum(int num)
@@ -26,9 +32,9 @@ void	displayNum(int num)
 void	messageDialog(std::string type)
 {  
 	std::cout << "------------------------------------------" << std::endl;
-//	- "LEVEL"	: ask sequence to player
-	if (type == "LEVEL")
-		std::cout << "Please enter your STARTING LEVEL:" << std::endl;
+//	- "SEQUENCE"	: ask sequence to player
+	if (type == "SEQUENCE")
+		std::cout << "Please enter the SEQUENCE:" << std::endl;
 //	- "LOSE"	: lose dialog
 	else if (type == "LOSE")
 	{
