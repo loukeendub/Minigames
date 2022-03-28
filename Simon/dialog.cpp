@@ -15,31 +15,37 @@ int	selectLevel()
 {
 	int	lev = 1;
 
-	std::cout << "Please enter your STARTING LEVEL:" << std::endl;
+	std::cout << "Please enter your STARTING SPEED LEVEL:" << std::endl;
 	std::cin >> lev;
-	return (lev);
+	if (lev > 1)
+		return (lev);
+	else
+		return (1);
 }
 
 //	+ display number
 void	displayNum(int num)
-{
-	std::cout << "---" << std::endl;
-	std::cout << "|" << num << "|" std::endl;
-	std::cout << "---" << std::endl;
-}
+{ std::cout << "[" << num << "]" << std::endl; }
 
 //	+ dialog messages
 void	messageDialog(std::string type)
-{  
-	std::cout << "------------------------------------------" << std::endl;
+{
 //	- "SEQUENCE"	: ask sequence to player
 	if (type == "SEQUENCE")
+	{
+		std::cout << "------------------------------------------" << std::endl;
 		std::cout << "Please enter the SEQUENCE:" << std::endl;
+	}
 //	- "LOSE"	: lose dialog
 	else if (type == "LOSE")
 	{
-		std::cout << "(T_T) Game Over! (T_T)" << std::endl;
+		std::cout << "	(T_T) Game Over! (T_T)" << std::endl;
 		std::cout << "------------------------------------------" << std::endl;
+	}
+	else if (type == "READY")
+	{
+		std::cout << "------------------------------------------" << std::endl;
+		std::cout << "	Press ENTER to continue..." << std::endl;
 	}
 }
 
@@ -47,27 +53,31 @@ void	messageDialog(std::string type)
 void	statusDialog(int level, int cleared)
 {
 	std::cout << "------------------------------------------" << std::endl;
-	std::cout << "| Level: " << level << " | Cleared: " << cleared << " |" << std::endl;
-	std::cout << "------------------------------------------" << std::endl << std::endl;
+	std::cout << "| Speed: " << level << "	|	Max Sequence: " << cleared << " |" << std::endl;
+	std::cout << "------------------------------------------" << std::endl;
 }
 
 //	+ clear screen
 void	clearScreen()
 {
-  	if (!cur_term)
-	{
-		int result;
-		setupterm(NULL, STDOUT_FILENO, &result);
-		if (result <= 0) return;
-	}
+  	#if defined(_WIN32) //if windows
+ 	   system("cls");
 
-	putp(tigetstr( "clear" ));
+	#else
+    	system("clear");    //if other
+	#endif  //finish
 }
 
 //	+ set waiting time between Master seq display
 void	waitNext(int lev)
 {
-	useconds_t	waitFactor = 1000;
-	// TODO: increase speed while level increases
-	usleep(waitFactor);
+	useconds_t	waitFactor;
+	useconds_t	max = 50;
+	
+	//increase speed while level increases
+	//	-100 log(x) + 1000
+	waitFactor = -100 * log(lev) + 1000;
+	if (waitFactor < max)
+		waitFactor = max;
+	usleep(waitFactor * 1000);
 }

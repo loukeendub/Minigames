@@ -10,7 +10,9 @@ RM			=	rm -f
 
 #	FILES
 
-SRCS		=	main.cpp
+SRCS		=	main.cpp \
+				dialog.cpp \
+				Simon.cpp
 
 OBJS 		=	$(SRCS:.cpp=.o)
 
@@ -19,7 +21,7 @@ OBJS 		=	$(SRCS:.cpp=.o)
 all			:	run score
 
 $(NAME)		:	$(OBJS)
-				@$(CC) $(CFLAGS) $^ -o $@
+				$(CC) $(CFLAGS) $^ -o $@
 
 re			:	fclean all
 
@@ -37,7 +39,7 @@ score		:
 				@echo "|                                        |"
 				@echo "|         enter "./Simon" to play        |"
 				@echo "------------------[READY]-----------------"
-				./Lockpick
+				./Simon
 				
 
 .phony		:	run clean fclean re score

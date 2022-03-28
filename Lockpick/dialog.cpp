@@ -7,7 +7,7 @@ void	introDialog()
 	std::cout << "------------------------------------------" << std::endl;
 	std::cout << "RULES:" << std::endl;
 	std::cout << "+	There are 9 locks to open." << std::endl;
-	std::cout << "+	Locks have 5-digit combinations." << std::endl;
+	std::cout << "+	Locks have 3-digit combinations." << std::endl;
 	std::cout << "+	To enter your guess type a number" << std::endl;
 	std::cout << "	greater than 0 and press Enter." << std::endl;
 	std::cout << "+	Repeat 3 times to set all values." << std::endl;

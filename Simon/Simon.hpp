@@ -5,23 +5,27 @@
 #include <vector>
 #include <ctime>
 #include <cstdlib>
+#include <cmath>
 #include <unistd.h>
 #include <term.h>
 
 class Simon
 {
-	typedef std::vector<int *>::iterator	sequence_iterator;
+	typedef std::vector<int>::iterator	sequence_iterator;
 
 	private:
 		int					_lev;
-		std::vector<int *>	_seq;
+		std::vector<int>	_seq;
 
 	public:
-		Simon(int lev, bool master);
+		Simon(int lev);
 		~Simon();
 
-		void	addSeq(int range);
-		void	printSeq(std::vector<int *> seq, int lev) const;
+		void				addSeq(int range);
+		std::vector<int>	getSeq();
+		void				printSeq(int lev);
+		int					getSize() const;
+		bool				compareSeq(int iter, int value) const;
 };
 
 // DIALOG :
