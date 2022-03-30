@@ -7,7 +7,20 @@ void	introDialog()
 	std::cout << "|               SIMON SAYS               |" << std::endl;
 	std::cout << "------------------------------------------" << std::endl;
 	std::cout << "RULES:" << std::endl;
-	std::cout << "[enter rules here]" << std::endl;
+	std::cout << "+ The goal of this game is to test your memory." << std::endl;
+	std::cout << "+ First of all, you will be asked to set the" << std::endl;
+	std::cout << "	game initial SPEED. This value is increased" << std::endl;
+	std::cout << "	every time you pass a level." << std::endl;
+	std::cout << "+ A numeric sequence will appear on screen." << std::endl;
+	std::cout << "+ You have to retype the sequence" << std::endl;
+	std::cout << "	one digit at the time and then press ENTER." << std::endl;
+	std::cout << "+ if you enter the correct sequence," << std::endl;
+	std::cout << "	a digit will be added up to the sequence." << std::endl;
+	std::cout << "+ repeat the operation as many times as you can." << std::endl;
+	std::cout << "+ when you lose, your score will appear." << std::endl << std::endl;
+
+	messageDialog("READY");
+	system("read");
 }
 
 //  + ask preferred start level (if blank start at lev 1) ;
